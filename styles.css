@@ -1,0 +1,80 @@
+body, html {  
+    margin: 0;
+    padding: 0;
+    background-color: #F2EFEA;
+}
+
+.container {
+    color: #E76D83;
+    font: 1.2em sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+input[type="text"] {
+    width: 200px; 
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #393D3F;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: lightcoral;
+}
+
+.orderTotal {
+    border: 2px solid #000;
+    padding: 20px;
+    margin: 20px;
+    width: fit-content;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+/* CSS for the Menu HTML script */
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.menu-item img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.menu-item h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #393D3F;
+}
+
+.menu-item p {
+    font-size: 1em;
+    color: #393D3F
+}

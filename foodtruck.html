@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Food Truck Fanatic</title>
+        <link rel="stylesheet" type="text/css" href="css\styles.css">
+        <script src="javascript/script.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Food Truck Fanatic</h1>
+
+            <div id="userInfoDisplay"></div>
+            
+            <form id="phoneForm" action="php/dbd.inc.php" method="post">    <!-- This allows the user to enter a 10 digit number using only integers -->
+                <label for="phoneNumber">Enter your 10-digit phone number:</label>
+                <input type="number" pattern="[0-9]{10}" id="phoneNumber" name="phoneNumber" maxlength="10">
+                <button type="button" onclick="checkPhoneNumber()">Submit</button>
+            </form>
+
+            <div id="userInfo" style="display: none;">
+                <p>Name: <span id="userName"></span></p>
+                <p>Address: <span id="userAddress"></span></p>  <!-- This will display the user's name and address after they enter it in the form below -->
+
+                <h2>Order Menu:</h2>
+                <div id="orderForm" style="display: none;">
+                    <a href="menu.html"><button style="background-color: #3498db; color: #fff; border-radius: 5px; align-items: center;">Go to Menu</button></a>
+
+                    <form id="tacoOrderForm">  <!-- This will allow the user to choose (from a drop down menu) a taco, quantity, and drink -->
+                        <label for="tacoType">Choose Taco:</label>
+                        <select id="tacoType" name="tacoType">
+                            <option>Select your taco:</option>
+                            <option value="Al Pastor">Al Pastor - $5.99</option>
+                            <option value="Barbacoa">Barbacoa - $6.49</option>
+                            <option value="Birria">Birria - $6.99</option>
+                            <option value="Carne Asada">Carne Asada - $9.99</option>
+                            <option value="Mahi Mahi">Mahi Mahi - $7.99</option>  
+                            <option value="Shrimp">Shrimp - $4.99</option>
+                            <option value="">No Taco</option>
+                        </select>
+            
+                        <label for="quantity">Quantity:</label>  <!-- This will allow the user to choose a quantity from a drop down menu -->
+                        <select id="quantity" name="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+        
+            
+                        <label for="drink">Choose Drink:</label>  <!-- This will allow the user to choose a drink from a drop down menu -->
+                        <select id="drink" name="drink">
+                            <option>Select your drink:</option>
+                            <option value="Tea">Tea - $14.99</option>
+                            <option value="Water">Water - $0.99</option>
+                            <option value="Coke">Coke - $1.99</option>
+                            <option value="Dr. Pepper">Dr. Pepper - $1.99</option>
+                            <option value="Sunkist">Sunkist - $1.99</option>
+                            <option value="">No Drink</option>
+                        </select>
+            
+                        <button type="button" onclick="addToOrder()">Add to Order</button>
+                    </form>
+                </div>
+
+                <div id="currentOrder">  <!-- This will display the user's current order, along with future orders that they wanna add -->
+                    <h2>Current Order:</h2>
+                    <ul id="orderSummary"></ul>
+                </div>
+
+            </div>
+
+            <div id="addInfo" style="display: none;">  <!-- This will allow the user to enter their name and address -->
+                <form id="addInfoForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+                    <button type="button" onclick="submitUserInfo()">Submit</button>
+                </form>
+            </div>
+
+            <button onclick="completeOrder()">Complete Order</button>  <!-- The two buttons for completing the order and for clearing the order -->
+            <button onclick="clearOrder()">Clear Order</button>
+            
+        </div>
+    </body>
+</html>
